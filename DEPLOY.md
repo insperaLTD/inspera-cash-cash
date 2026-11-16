@@ -33,6 +33,14 @@ npm start
 
 בהפעלה הראשונה, אם טבלת `users` ריקה, השרת ייצור משתמש מנהל לפי `ADMIN_USERNAME`, `ADMIN_PASSWORD` ו-`ADMIN_DISPLAY_NAME`. הסיסמה נשמרת כ-hash במסד הנתונים; היא לא נמצאת בקוד או במאגר GitHub. אם כבר קיים משתמש, ההגדרות האלה לא ישנו את הסיסמה שלו.
 
+כדי לעדכן משתמש מנהל שכבר קיים, הגדירו את `ADMIN_USERNAME` ו-`ADMIN_PASSWORD` בסביבה שמחוברת למסד הנתונים והריצו פעם אחת:
+
+```bash
+npm run admin:update
+```
+
+הפעולה מעדכנת משתמש מנהל קיים בשם היעד או בשם הקודם `admin`; אם אין כזה, היא יוצרת מנהל חדש. היא נכשלת במקום לדרוס משתמשים או לשנות חשבון שאינו מנהל.
+
 ## פריסה ב-Railway
 
 1. צרו פרויקט Railway והוסיפו שירות PostgreSQL.
@@ -41,7 +49,7 @@ npm start
 4. הגדירו בשירות האפליקציה:
    - `DATABASE_URL` — הפניה למשתנה של שירות PostgreSQL.
    - `JWT_SECRET` — ערך אקראי וחזק (לפחות 32 תווים).
-   - `ADMIN_USERNAME` — למשל `admin`.
+   - `ADMIN_USERNAME` — למשל `inspera`.
    - `ADMIN_PASSWORD` — סיסמה ראשונית וחזקה.
    - `ADMIN_DISPLAY_NAME` — שם התצוגה, למשל `מנהל ראשי`.
    - `NODE_ENV` — `production`.

@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "admin:update": "node src/scripts/update-admin.js"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -28,7 +28,7 @@ async function ensureInitialAdmin() {
     throw new Error('No users exist; set ADMIN_PASSWORD to create the initial manager account');
   }
 
-  const username = (process.env.ADMIN_USERNAME || 'admin').trim().toLowerCase();
+  const username = (process.env.ADMIN_USERNAME || 'inspera').trim().toLowerCase();
   if (!username) {
     throw new Error('ADMIN_USERNAME cannot be empty');
   }
